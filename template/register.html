@@ -1,0 +1,39 @@
+{% load static %}
+
+
+<html>
+    <head>
+        <title>login form</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+    <body>
+        <div class="loginbox">
+        <img src="login.jpg" alt="" class="login">
+        <h1>Register Here</h1>
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show"  role="alert">
+
+            <h6 style="color: red;">{{message    }}</h6>
+            <button type="button" class="close" data-dismiss="alert" aria-label="close" >
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        <form action="{% url 'register' %}"  method="POST" autocomplete="off">
+            {% csrf_token %}
+            <div class="hide" id="myform">
+                <p>user name</p>
+                <input type="text" placeholder="Enter username" name="username" required>
+                <p>email</p>
+                <input type="email" placeholder="Enter your email" name="email">
+                <p>password</p>
+                <input type="password" placeholder="Enter password" name="password"><br><br>
+                <p>confirm password</p>
+                <input type="password" placeholder="confirm password" name="password2">
+                <input type="hidden" name="ref_code" value="{{ ref_code }}">
+                <input type="submit" value="Register"><br><br>
+            </div>
+        </form>
+        </div>
+    </body>
+    </head>
+</html>

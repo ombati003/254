@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>network configuration</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <form action="{% url 'speednet' %}" class="loginbox " id="net" metod="post">
+        {% csrf_token %}
+        <p>configure my network</p><br><br>
+        <label for="reset">enter your phone's API</label>
+        <input type="number" placeholder="192.168.186" name="ipaddress">
+        <input type="submit" value="connect my phone to network">
+        <div>
+            <ul>
+              <li><a href="pic.html" class="register-link" > phone's API</a></li><br>
+            </ul>
+        </div>
+    </form>
+</body>
+</html>

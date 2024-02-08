@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>network</title>
+    <link rel="stylesheet" href="{% static 'test.css' %}">
+    <style>
+        .error-container {
+          position: fixed;
+          top: 50%;
+      
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+          border: 1px solid #ccc;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          z-index: 9999;
+          text-align: center;
+        }
+        
+        .error-icon {
+          width: 50px;
+          height: 50px;
+          background-image: url('https://cdn.iconscout.com/icon/free/png-512/error-213-569226.png');
+          background-size: cover;
+          margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="db">
+        <h2>Network speed for ip {{ip}}</h2>
+        <button class="dropdowns_button"><b style="font-size: 25px;">network speed</b></button>
+        <div id="home" class="dropdowns">
+            <h3>network speed</h3>
+            <a href="#" id="errorLink">speed up my network</a>
+            <a href="{% url 'net' %}">report network errors</a>
+            <a href="{% url 'config_net' %}">add inactive downlines</a>
+        </div>
+    </div>
+    <div class="info">
+        <h1>my current network speed is 3500mps</h1>
+    </div>
+    <section class="info" >
+        <section>
+            <h2>contact us</h2>
+            <p>whatsapp telegram</p>
+        </section>
+        <div>
+            <p>reffeal code</p>
+        </div>
+        <p>&copy;copyright 2024 by mr.benson
+    </section>
+    <footer>
+        <h5>refferal link</h5>
+        <p>htttps://gtdygu</p>
+    </footer>
+    <script>
+        document.getElementById('errorLink').addEventListener('click', function(event) {
+          event.preventDefault();
+          showError("Your downlines are not compatible for you to speed up the network access");
+        });
+      
+        function showError(errorMessage) {
+          var errorContainer = document.createElement('div');
+          errorContainer.classList.add('error-container');
+      
+          var errorIcon = document.createElement('div');
+          errorIcon.classList.add('error-icon');
+          errorContainer.appendChild(errorIcon);
+      
+          var errorText = document.createElement('p');
+          errorText.textContent = errorMessage;
+          errorContainer.appendChild(errorText);
+      
+          document.body.appendChild(errorContainer);
+      
+          setTimeout(function() {
+            errorContainer.remove();
+          }, 3000); // Remove the error container after 3 seconds
+        }
+      </script>
+</body>
+</html>

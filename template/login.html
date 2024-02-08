@@ -1,0 +1,31 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>login form</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+    <body>
+        <div class="loginbox">
+        <img src="" alt="" class="login">
+        <h1>login here</h1>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+        <form action="login" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <p>user name</p>
+            <input type="text" placeholder="Enter Username" name="username">
+            <p>password</p>
+            <input type="password" placeholder="Enter password" name="password"><br><br>
+            <input type="submit" value="login"><br><br>
+            <div>
+              <ul>
+                <li><a href="resety.html" class="register-link" >forgot your password</a></li><br>
+                <li><a href="register.html" class="register-link" >Don't have an account</a></li>
+              </div>
+            </nav>
+        </form>
+        </div>
+    </body>
+    </head>
+</html>

@@ -1,0 +1,20 @@
+<!-- main.html or profile.html -->
+
+<h2>User Profile</h2>
+<p>Referral Code: {{ ref_profile.code }}</p>
+
+{% block content %}
+
+<h3>Referred Users</h3>
+<ul>
+    {% for referred_user in ref_profile.referred_users.all %}
+        <li>{{ referr }}</li>
+    {% endfor %}
+</ul>
+
+<footer>
+    <h5>Referral link</h5>
+    <p>{{ referral_link }}</p>
+</footer>
+
+{% endblock %}

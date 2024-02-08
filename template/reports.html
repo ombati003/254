@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referred Users</title>
+    <link rel="stylesheet" href="{% static 'rewards.css' %}">
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Date Joined</th>
+            <th>phone number</th>
+            <th>status</th>
+        </tr>
+        {% for user in referred_users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <ul>
+                        {% for referral in user.profile.referral_set.all %}
+                            <li>{{ referral.referral_date_time }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        <!-- Add this block to print debug information -->
+        {% if referred_users %}
+            <p>Referred Users:</p>
+        <ul>
+            {% for user in referred_users %}
+                <li>{{ user.username }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <tr>
+            <td colspan="4">No referred users found.</td>
+        </tr>
+        
+        {% endif %}
+
+  
+    </table>
+
+    <!-- Your existing HTML for rewards or other content goes here -->
+
+</body>
+</html>

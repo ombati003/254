@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>financial</title>
+    <link rel="stylesheet" href="{% static 'test.css' %}" >
+</head>
+<body>
+    <div class="db">
+        <button class="dropdowns_button"><b style="font-size: 25px;">financial report</b></button>
+        <div id="home" class="dropdowns">
+            <h3>my total earnings </h3>
+            <a href="{% url 'welcome' %}">aggregate financial summary</a>
+            <a href="{% url 'rewards' %}">claim my rewards</a>
+            <a href="{% url 'withdraw' %}">withdraw earnings</a>
+        </div>
+    </div>
+    <section class="info">
+        <section>
+            <h2>contact us</h2>
+            <p>whatsapp telegram</p>
+        </section>
+        <div>
+            <p>reffeal code</p>
+        </div>
+        <p>&copy;copyright 2024 by mr.benson
+    </section>
+    <footer>
+        <h5>refferal link</h5>
+        <p>htttps://gtdygu</p>
+    </footer>
+</body>
+</html>

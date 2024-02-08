@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Windows Error</title>
+<style>
+  .error-container {
+    position: fixed;
+    top: 50%;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    text-align: center;
+  }
+  
+  .error-icon {
+    width: 50px;
+    height: 50px;
+    background-image: url('https://cdn.iconscout.com/icon/free/png-512/error-213-569226.png');
+    background-size: cover;
+    margin-bottom: 10px;
+  }
+  div{
+    background-color: red;
+    margin: 50px 70px;
+    margin: 0;
+    border-radius: 20px;
+    width: 50%;
+    place-content: center;
+    float: auto;
+  }
+  div #errorLink{
+      align-items: center;
+      border: none;
+      outline: none;
+      height: 40px;
+      background: #fb2525;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 20px;
+      width: 50%;
+      position: absolute;
+      margin-bottom: 0;
+      text-decoration: none;
+      text-align: center;
+      justify-content: center;
+      padding: 10px, 12px;
+  }
+  div #errorLink:hover{
+      cursor: pointer;
+      background: #ffc107;
+      color: #000;
+  }
+</style>
+</head>
+<body>
+    <div>
+        <a href="#" id="errorLink">Click here to see Windows error</a>
+    </div>
+<script>
+  document.getElementById('errorLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    showError("You don't have active downlines to request a withdrawal");
+  });
+
+  function showError(errorMessage) {
+    var errorContainer = document.createElement('div');
+    errorContainer.classList.add('error-container');
+
+    var errorIcon = document.createElement('div');
+    errorIcon.classList.add('error-icon');
+    errorContainer.appendChild(errorIcon);
+
+    var errorText = document.createElement('p');
+    errorText.textContent = errorMessage;
+    errorContainer.appendChild(errorText);
+
+    document.body.appendChild(errorContainer);
+
+    setTimeout(function() {
+      errorContainer.remove();
+    }, 3000); // Remove the error container after 3 seconds
+  }
+</script>
+</body>
+</html>

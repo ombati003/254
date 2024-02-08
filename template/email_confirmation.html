@@ -1,0 +1,8 @@
+
+{% autoescape off%}
+welcome to logi 
+hello {{name}} please confirm your email by clicking the link below
+
+confirmation link:http://{{domain}} {% url'activate' uid64=uid token=token}
+
+{% endautoescape %}
