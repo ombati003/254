@@ -6,48 +6,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Referred Users</title>
-    <link rel="stylesheet" href="{% static 'rewards.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'test.css' %}">
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Username</th>
-            <th>Date Joined</th>
-            <th>phone number</th>
-            <th>status</th>
-        </tr>
-        {% for user in referred_users %}
+    <header>    
+        <nav class="navbar" >
+            <div class="logo">@CASHFLOW</div>
+            <ul class="nav-links">
+                <a href="#home">home</a>
+                <a href="{% url 'invited_friends'%} ">Dashboard</a>
+                <a href="{% url 'config_net' %}" id="errorLink">VPN Connect</a>
+                <a href="{% url 'finance' %} ">financial Report</a>
+                <a href="{% url 'about' %}">Upgrade Account</a>
+                <a href="{% url 'about' %}">About Us</a>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">&#9776</div>
+        </nav>
+    </header>
+    <h2>welcome back {{name}}</h2>
+    <section class="hero">
+        <div class="service">
+            <h3>WhatsApp Earnings</h3>
+            <h4>KSH: 4000</h4>
+            <a href="https://telegram.me/your-telegram-link"><i class="fab fa-telegram"></i></a>
+        </div>
+
+        <div class="service">
+            <h3>Spinning</h3>
+            <h4>KSH: 4000</h4>
+            <a href="https://telegram.me/your-telegram-link"><i class="fab fa-telegram"></i></a>
+        </div>
+
+        <div class="service">
+            <h3>Forex Classes</h3>
+            <h4>Enroll Now</h4>
+            <a href="https://telegram.me/your-telegram-link"><i class="fab fa-telegram"></i></a>
+        </div>
+
+        <div class="service">
+            <h3>AI Bots</h3>
+            <h4>Cipher</h4>
+            <a href="https://telegram.me/your-telegram-link"><i class="fab fa-telegram"></i></a>
+        </div>
+        <div class="service">
+            <h3>Approved Tasks</h3>
+            <h4>KSH: 2500</h4>
+            <a href="https://telegram.me/your-telegram-link"><i class="fab fa-telegram"></i></a>
+        </div>
+    </section>
+    <section class="table-data">
+        <table>
             <tr>
-                <td>{{ user.username }}</td>
-                <td>{{ user.email }}</td>
-                <td>
-                    <ul>
-                        {% for referral in user.profile.referral_set.all %}
-                            <li>{{ referral.referral_date_time }}</li>
-                        {% endfor %}
-                    </ul>
-                </td>
+                <th>Username</th>
+                <th>Date Joined</th>
+                <th>phone number</th>
+                <th>status</th>
             </tr>
-        {% endfor %}
-        <!-- Add this block to print debug information -->
-        {% if referred_users %}
-            <p>Referred Users:</p>
-        <ul>
             {% for user in referred_users %}
-                <li>{{ user.username }}</li>
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <ul>
+                            {% for referral in user.profile.referral_set.all %}
+                                <li>{{ referral.referral_date_time }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
             {% endfor %}
-        </ul>
-        {% else %}
-        <tr>
-            <td colspan="4">No referred users found.</td>
-        </tr>
-        
-        {% endif %}
+            <!-- Add this block to print debug information -->
+            {% if referred_users %}
+                <p>Referred Users:</p>
+            <ul>
+                {% for user in referred_users %}
+                    <li>{{ user.username }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <tr>
+                <td colspan="4">No referred users found.</td>
+            </tr>
+            
+            {% endif %}
 
-  
-    </table>
+    
+        </table>
 
+    </section>
     <!-- Your existing HTML for rewards or other content goes here -->
+     <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
 
+        menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        });
+     </script>
+<script src="{% static 'scripts.js' %}"></script>
 </body>
 </html>

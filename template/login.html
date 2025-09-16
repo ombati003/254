@@ -1,31 +1,33 @@
 {% load static %}
 
-<html>
-    <head>
-        <title>login form</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
-    <body>
-        <div class="loginbox">
-        <img src="" alt="" class="login">
-        <h1>login here</h1>
-        {% for message in messages %}
-        <h3>{{message}}</h3>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home.css'%}" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="POST">
+        {% csrf_token %} {% for message in messages %}
+        <p style="color: red">{{ message }}</p>
         {% endfor %}
-        <form action="login" method="POST" autocomplete="off">
-            {% csrf_token %}
-            <p>user name</p>
-            <input type="text" placeholder="Enter Username" name="username">
-            <p>password</p>
-            <input type="password" placeholder="Enter password" name="password"><br><br>
-            <input type="submit" value="login"><br><br>
-            <div>
-              <ul>
-                <li><a href="resety.html" class="register-link" >forgot your password</a></li><br>
-                <li><a href="register.html" class="register-link" >Don't have an account</a></li>
-              </div>
-            </nav>
-        </form>
-        </div>
-    </body>
-    </head>
+        <h1>Login Here</h1>
+        <p>Username:</p> <br />
+        <input type="text" placeholder="enter username" name="username" /><br />
+        <p>password:</p> <br />
+        <input type="password" placeholder="enter password" name="password" /><br />
+        <input type="submit" value="Login"><br>
+            
+        <ul>
+          <li><a href="resety.html" class="register-link" >forgot your password</a></li><br>
+          <li><a href="register.html" class="register-link" >Don't have an account</a></li>
+              
+        </ul>
+      </form>
+    </div>
+</body>
+</head>
 </html>

@@ -1,8 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'home.css'%}" />
 <title>Windows Error</title>
 <style>
   .error-container {
@@ -27,42 +30,27 @@
     background-size: cover;
     margin-bottom: 10px;
   }
-  div{
-    background-color: red;
-    margin: 50px 70px;
-    margin: 0;
-    border-radius: 20px;
-    width: 50%;
-    place-content: center;
-    float: auto;
-  }
-  div #errorLink{
-      align-items: center;
-      border: none;
-      outline: none;
-      height: 40px;
-      background: #fb2525;
-      color: #fff;
-      font-size: 18px;
-      border-radius: 20px;
-      width: 50%;
-      position: absolute;
-      margin-bottom: 0;
-      text-decoration: none;
-      text-align: center;
-      justify-content: center;
-      padding: 10px, 12px;
-  }
-  div #errorLink:hover{
-      cursor: pointer;
-      background: #ffc107;
-      color: #000;
-  }
+
 </style>
 </head>
 <body>
-    <div>
-        <a href="#" id="errorLink">Click here to see Windows error</a>
+    <div class="container">
+      <form action="" method="POST">
+        {% csrf_token %} {% for message in messages %}
+        <p style="color: red">{{ message }}</p>
+        {% endfor %}
+        <h1>withdrawa Funds</h1>
+        <p>phone Number:</p> <br />
+        <input type="number" placeholder="254712345678" name="uname" /><br />
+        <p>Amount:</p> <br />
+        <input type="number" placeholder="Enter Amount" name="passwd" /><br />
+        <input type="submit" value="withdrawal" id="errorLink"><br><br>
+            
+        <ul>
+          <li><a href="resety.html" class="register-link" >check financial report</a></li><br>
+              
+        </ul>
+      </form>
     </div>
 <script>
   document.getElementById('errorLink').addEventListener('click', function(event) {

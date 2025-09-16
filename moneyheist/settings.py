@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path 
 import os
-import sendgrid
+#import sendgrid
 from .info import *
 
 
@@ -45,7 +45,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'referral',
+    #'refferral'
     'django_daraja',
     'allauth',
     'allauth.account',
@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     
-    'MpesaApiDemo'
+    #'MpesaApiDemo'
 ]
 
 MIDDLEWARE = [

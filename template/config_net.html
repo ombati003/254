@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>network configuration</title>
-    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="{% static 'home.css'%}" />
 </head>
 <body>
-    <form action="{% url 'speednet' %}" class="loginbox " id="net" metod="post">
-        {% csrf_token %}
-        <p>configure my network</p><br><br>
-        <label for="reset">enter your phone's API</label>
-        <input type="number" placeholder="192.168.186" name="ipaddress">
-        <input type="submit" value="connect my phone to network">
-        <div>
-            <ul>
-              <li><a href="pic.html" class="register-link" > phone's API</a></li><br>
-            </ul>
-        </div>
-    </form>
+    <div class="container">
+      <form action="{% url 'speednet' %}" method="POST">
+        {% csrf_token %} {% for message in messages %}
+        <p style="color: red">{{ message }}</p>
+        {% endfor %}
+        <h1>configure my network</h1>
+        <p>enter your phone's API:</p> <br />
+        <input type="number" placeholder="192.168.186" name="ipaddress" /><br /><br>
+        <input type="submit" value="Connect" id="errorLink"><br><br>
+            
+        <ul>
+          <li><a href="pic.html" class="register-link" > phone's API</a></li><br>
+              
+        </ul>
+      </form>
+    </div>
 </body>
 </html>

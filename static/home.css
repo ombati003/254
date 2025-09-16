@@ -1,0 +1,127 @@
+body{
+    background-color: lightgray;
+}
+div{
+  background-color: lightgray;
+   
+}
+form {
+    background-color: rgba(0, 0, 255, 0.6);
+    width: fit-content;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+.container{
+    width: fit-content;   
+    transform: translate(-50%, -50%); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+.container input[type="text"], input[type="password"], input[type=email], input[type=password],input[type="number"]
+ {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+
+}
+input ::placeholder {
+    color: white;
+}
+
+.container h1{
+    color: #ffc107;
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+
+}
+
+.container p{
+    letter-spacing: 1.5px;
+    color: #000;
+}
+
+.container input[type="submit"]
+ {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-top: 15px;
+    height: 40px;
+    background: lightgray;
+    color:black;
+    letter-spacing: 2px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.container input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+.container a{
+    text-decoration: none;
+    font-size: 15px;
+    background: none;
+    line-height: 10px;
+    color: darkgray;
+    
+}
+.container a:hover
+{
+    color: #ffc107;
+}
+.container ul{
+    list-style: none;
+}
+.base{
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    padding: 15px;
+    margin: 0;
+  }
+.menu_bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    display: none;
+    margin-left: 0;
+    padding: 20px;
+    width: fit-content;
+
+  }
+.icons{
+    top: 0;
+    width: 100%;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+  }
+
+.dashboard ,div{
+  margin-top: 20px;
+}
+p {
+    color: white;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+

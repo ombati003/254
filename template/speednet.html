@@ -33,6 +33,31 @@
     </style>
 </head>
 <body>
+    <header>    
+        <nav class="navbar" >
+            <div class="logo">@CASHFLOW</div>
+            <ul class="nav-links">
+                <a href="#home">home</a>
+                <a href="{% url 'invited_friends'%} ">Dashboard</a>
+                <a href="{% url 'config_net' %}">VPN Connect</a>
+                <a href="{% url 'finance' %} ">financial Report</a>
+                <a href="#" id="menu-toggle">Upgrade Account</a>
+                <a href="{% url 'about' %}">About Us</a>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">&#9776</div>
+            <form action="" method="POST" class="user_upgrade">
+                {% csrf_token %}
+                <select name="" id="">
+                    <option value="">user1</option>
+                    <option value="">user1</option>
+                    <option value="">user1</option>
+                    <option value="">user1</option>
+                    <option value="">user1</option>
+                </select>
+            </form>
+        </nav>
+    </header>
+    <h2>welcome back {{name}}</h2>
     <div class="db">
         <h2>Network speed for ip {{ip}}</h2>
         <button class="dropdowns_button"><b style="font-size: 25px;">network speed</b></button>

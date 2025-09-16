@@ -1,34 +1,7 @@
 body{
     background-color: lightgray;
 }
-table{
-    margin:50px 35px ;
-    background-color: lightblue;
-    font-size: 20px;
-    border-collapse: collapse;
-    width: 80%;
-}
-table, th, td{
-    width: 80%;
-    border-collapse: collapse;
-    padding: 13px 11px;
-    width: 80%;
-    text-align: center;
-}
-tr th{
-    background-color: lightgoldenrodyellow;
-}
-tr th:hover{
-    cursor: pointer;
-    background-color: darkgray;
-}
-tr td:nth-child(even){
-    background-color: blue;
-}
-tr td:hover{
-    cursor: pointer;
-    background-color: white;
-}
+
 div{
     background-color: red;
     margin: 50px 70px;
